@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="공적연금 종합안내" />
+        <meta name="author" content="공무원 연금공단" />
+        <title>공적연금 종합안내</title>
+        <meta property="og:title" content="공적연금 종합안내" />
+        <meta property="og:description" content="Simple chatbox widget using Twitter Bootstrap 5" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://sistematico.github.io/bootstrap-chatbox" />
+        <meta property="og:image" content="https://sistematico.github.io/bootstrap-chatbox/assets/img/logo-purple.png" />
+        <link rel="icon" type="image/svg+xml" href="assets/img/logo-purple.svg" />
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+    </head>
+    <body>
+        <header>
+            <div class="container d-flex align-items-center justify-content-between p-3 mb-3 custom-border-bottom">
+                <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+                    <img class="logo" src="assets/img/logo.png" alt="공무원 연금공단" height="40" style="margin-top: 8px" />
+                    <span class="ms-2 fs-4">공적연금 종합안내 프로그램</span>
+                </a>
+
+                <div>
+                    <button onclick="chatStart()">처음부터</button>
+                    <!-- <a class="btn shadow-none" href="https://github.com/sistematico/bootstrap-chatbox" role="button" style="color: #fff; background-color: #9a97f3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16" style="margin-top: -5px">
+                            <path
+                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                            />
+                        </svg>
+                        Github
+                    </a> -->
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="container">
+                <div class="modal fade" tabindex="-1" id="modal">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title"><img class="logo" src="assets/img/logo.png" alt="공무원 연금공단" height="40" />공적연금 종합안내 프로그램</h5>
+                                <button class="btn-close" data-bs-dismiss="modal" aria-label="닫기"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-5"><img src="assets/img/geps_mascot.png" alt="믿음이와 동행이" width="100%" /></div>
+                                    <div class="col-7">
+                                        <p>기존의 수동적에서 보다 능동적이고 고객 상황별 대응 사례를 기반으로 하여 공단의 연금전문성을 통해 고객님들께 공적연금 종합안내 프로그램을 제작했습니다.</p>
+                                        <p>퇴직사유와 급여종류 등 향후 경력경로 등</p>
+                                        <p>여러분의 현재(단기 예정)와 미래 상황적합한 공적연금 분양에 전문적인 안내 서비스를 통해 충분한 연금제도 활용과 노후 설계를 지원하고자 만들었습니다.</p>
+                                        <p>고객님께서 입력하신 값에 따라 공단 마스코트 믿음이가 안내를 도와 드립니다.</p>
+                                        <p>감사합니다.</p>
+                                    </div>
+                                </div>
+                                <p class="fs-4 text-warning">🙅🏻‍♀️ 본 개인별 입렵값 등 정보는 수집, 보관되지 않으며, 서비스 종료후 자동적으로 폐기됩니다.</p>
+                            </div>
+                            <div class="modal-footer">'<button class="btn btn-primary" data-bs-dismiss="modal">닫기</button></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h>대화하기</h>
+                    </div>
+                    <div class="card-body" id="messages"></div>
+                    <!-- <div class="card-footer">
+                        <div class="input-group">
+                            <input type="text" class="form-control shadow-none" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2" />
+                            <button class="btn btn-primary shadow-none border-0" type="button" id="button-addon2" style="background-color: #9a97f3">Send</button>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </main>
+        <footer class="py-3">
+            <div class="container custom-border-top pt-3" style="color: #556677">
+                (63568)제주특별자치도 서귀포시 서호중앙로 63(서호동)<br />
+                Copyright(c) GEPS. All Right Reserved.
+            </div>
+        </footer>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/moment-with-locales.min.js"></script>
+        <script>
+            //[...Array(10)].forEach((e, i) => loopNestedObj(divs));
+            const modal = new bootstrap.Modal(document.querySelector('#modal'), {});
+
+            document.onreadystatechange = () => modal.show();
+
+            let current = 0;
+
+            class Question {
+                message;
+                options;
+                answer;
+                constructor(message, options) {
+                    this.message = message;
+                    this.options = options;
+                }
+            }
+
+            const questions = [
+                new Question('1. 퇴직사유', [{ text: '정년' }, { text: '명예' }, { text: '일반(의원 면직 등 계약만료 포함)' }]),
+                new Question('2. 고객님의 재직기간은 몇 년 이신가요?(합산, 사병 기간등 가산기간 포함)', [{ text: '2016년 이후 퇴직 기준 10년 이상' }, { text: '2016년 이후 퇴직 기준 10년 미만' }]),
+                new Question('3. 어떤 급여를 선택하실 건가요?', [{ text: '퇴직연금' }, { text: '퇴직연금공제일시금' }, { text: '퇴직연금일시금' }, { text: '미수령 예정' }]),
+            ];
+
+            const chatStart = () => {
+                document.getElementById('messages').innerHTML = '';
+
+                current = 0;
+
+                const _div = document.createElement('div');
+                //_div.classList.add(classname);
+                _div.classList.add('pb-4', 'text-center');
+                document.getElementById('messages').appendChild(_div);
+                const _span = document.createElement('span');
+
+                _span.textContent = moment().locale('ko').format('YYYY MMMM Do a h:mm');
+                _div.appendChild(_span);
+                _div.appendChild(document.createElement('hr'));
+
+                chat({ message: '고객님의 현재 상황을 알려주세요' });
+
+                chat(questions[current]);
+            };
+
+            const messagediv = (message, options) => {
+                const third = document.createElement('div');
+                const thirdClasses = ['flex-shrink-1', 'bg-light', 'rounded', 'py-2', 'px-3'];
+                third.classList.add(...thirdClasses);
+
+                const msgDiv = document.createElement('div');
+                msgDiv.classList.add('font-weight-bold', 'mb-1');
+                msgDiv.innerHTML = message.replaceAll('\n', '<br>');
+
+                third.appendChild(msgDiv);
+
+                if (options) {
+                    //<div class="rounded bg-secondary bg-opacity-50 p-1">1.퇴직사유</div>
+                    options.forEach((o, index) => {
+                        const option = document.createElement('div');
+                        option.classList.add('rounded', 'bg-secondary', 'bg-opacity-10', 'p-1', 'mt-1', 'pointer');
+                        option.name = 'option' + current;
+
+                        const optionTxt = `${index + 1}. ${o.text}`;
+                        option.onclick = (e) => {
+                            answer(optionTxt);
+                            e.target.classList.add('bg-opacity-25');
+                            nextQuestion();
+                        };
+                        option.textContent = optionTxt;
+                        third.appendChild(option);
+                    });
+                }
+
+                return third;
+            };
+
+            const avatar = () => {
+                const second = document.createElement('div');
+                second.classList.add('mx-2');
+
+                const avatar = document.createElement('img');
+                avatar.src = 'assets/img/users/geps.png';
+                avatar.classList.add('rounded-circle', 'me-1');
+                avatar.width = 40;
+                avatar.height = 40;
+                avatar.alt = '믿음이';
+
+                second.appendChild(avatar);
+                return second;
+            };
+
+            const timediv = (classname) => {
+                const fourth = document.createElement('div');
+                fourth.classList.add('ms-2');
+
+                const timeDiv = document.createElement('div');
+                timeDiv.classList.add('text-muted', 'small', 'text-nowrap', 'mt-2');
+                timeDiv.textContent = moment().locale('ko').format('a h:mm');
+                timeDiv.classList.add(classname);
+
+                fourth.appendChild(timeDiv);
+                return fourth;
+            };
+
+            const chat = (question) => {
+                const first = document.createElement('div');
+                first.classList.add('other', 'pb-4');
+                document.getElementById('messages').appendChild(first);
+
+                // 아바타
+                first.appendChild(avatar());
+
+                // 메세지
+                const messageDiv = messagediv(question.message, question.options);
+                messageDiv.classList.add('message-friend');
+                first.appendChild(messageDiv);
+
+                //시간
+                first.appendChild(timediv('ms-2'));
+
+                first.focus();
+            };
+
+            const answer = (message) => {
+                const first = document.createElement('div');
+                first.classList.add('own', 'pb-4');
+                document.getElementById('messages').appendChild(first);
+
+                // 메세지
+                const messageDiv = messagediv(message);
+                messageDiv.classList.add('message');
+                first.appendChild(messageDiv);
+
+                //시간
+                first.appendChild(timediv('me-2'));
+            };
+
+            const nextQuestion = () => {
+                current++;
+                if (current !== 3) {
+                    chat(questions[current]);
+                }
+
+                if (current === 3) {
+                    chat({ message: '고객님의 예상되는 미래 상황은 다음과 같습니다.' });
+                    chat({
+                        message: `급여수령(퇴직연금)
+            퇴직연금의 산정방법
+            교육자료 활용
+            퇴직연금의 개시연령
+            교육자료 활용
+
+            개시가 바로 안될경우 조기퇴직연금을 활용해보세요!
+            조기퇴직연금의 경우 1년 당 5%씩 감액합니다.
+
+            (퇴직소득세)
+            (연금소득세)
+            (연금계좌변경)`,
+                    });
+                }
+
+                const card = document.querySelector('#messages');
+                card.scrollTop = card.scrollHeight;
+                console.log(card.scrollTop, card.scrollHeight, card);
+            };
+
+            chatStart();
+        </script>
+    </body>
+</html>
