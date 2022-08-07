@@ -247,22 +247,8 @@
                 }
 
                 const container = document.querySelector('main .container');
-                //const card = document.querySelector('#messages');
-                //
-                //container.animate([{ scrollTo: { top: 0 } }, { scrollTo: { top: container.scrollHeight } }], 400);
-                //container.scrollTop = container.scrollHeight;
-                container.scrollTo({ top: container.scrollHeight });
-
-                console.log(container.getAnimations());
-
-                //card.offsetTop = card.offsetHeight;
-
-                console.log(container.scrollTop, container.scrollHeight, container);
-                //console.dir(container);
-                //console.dir(card);
-                //console.log(card.offsetTop, card.offsetHeight);
+                container.scrollTo({ top: container.scrollHeight, behavior: 'smooth' });
             };
-
             chatStart();
         </script>
     </body>
