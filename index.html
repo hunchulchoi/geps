@@ -24,7 +24,7 @@
                 </a>
 
                 <div>
-                    <button onclick="chatStart()">처음부터</button>
+                    <button class="btn btn-warning" onclick="chatStart()">처음부터</button>
                     <!-- <a class="btn shadow-none" href="https://github.com/sistematico/bootstrap-chatbox" role="button" style="color: #fff; background-color: #9a97f3">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16" style="margin-top: -5px">
                             <path
@@ -154,7 +154,6 @@
                 third.appendChild(msgDiv);
 
                 if (options) {
-                    //<div class="rounded bg-secondary bg-opacity-50 p-1">1.퇴직사유</div>
                     options.forEach((o, index) => {
                         const option = document.createElement('div');
                         option.classList.add('rounded', 'bg-secondary', 'bg-opacity-10', 'p-3', 'mt-1', 'pointer');
