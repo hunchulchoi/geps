@@ -165,6 +165,9 @@
                             selected[current] = o.text;
                             answer(optionTxt);
                             e.target.classList.add('bg-opacity-25');
+
+                            //console.log(e.target.parent('div'));
+
                             nextQuestion();
                         };
                         option.textContent = optionTxt;
@@ -370,6 +373,7 @@
                 button.href = '#';
                 button.classList.add('btn', 'btn-md', 'btn-primary', 'mt-2', 'w-25');
                 button.textContent = '처음부터';
+                button.onclick = chatStart;
 
                 cardBody.appendChild(button);
 
