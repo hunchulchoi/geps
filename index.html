@@ -151,8 +151,15 @@
                             answer(optionTxt);
                             e.target.classList.add('bg-opacity-25');
 
-                            //console.log(e.target.parent('div'));
+                            // 대답한 질문에 또 대답할수 없도록 click 이벤트 회수
+                            const sibling = e.target.parentElement.children;
 
+                            console.log(sibling);
+
+                            for (let el of sibling) {
+                                el.onclick = undefined;
+                                el.classList.remove('pointer');
+                            }
                             nextQuestion();
                         };
                         option.textContent = optionTxt;
