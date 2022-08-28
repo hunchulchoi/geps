@@ -7,13 +7,14 @@
         <meta name="author" content="공무원 연금공단" />
         <title>공적연금 종합안내</title>
         <meta property="og:title" content="공적연금 종합안내" />
-        <meta property="og:description" content="Simple chatbox widget using Twitter Bootstrap 5" />
+        <meta property="og:description" content="공무원 연금공단 공적연금 종합안내" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://sistematico.github.io/bootstrap-chatbox" />
-        <meta property="og:image" content="https://sistematico.github.io/bootstrap-chatbox/assets/img/logo-purple.png" />
-        <link rel="icon" type="image/svg+xml" href="assets/img/logo-purple.svg" />
+        <meta property="og:url" content="https://www.geps.or.kt" />
+        <meta property="og:image" content="/assets/img/talk_logo.png" />
+        <link rel="icon" type="image/svg+xml" href="assets/img/talk.ico" />
         <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
         <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
     </head>
     <body>
         <header>
@@ -69,332 +70,80 @@
                 Copyright(c) GEPS. All Right Reserved.
             </div>
         </footer>
+
+        <!-- offcanvas-->
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasInfo" aria-labelledby="offcanvasLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasLabel">1-1. 퇴직연금 산정방식</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="닫기"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div id="offcanvasContent">
+                    <ul>
+                        <li class="p-1">퇴직연금은 공무원으로 10년 이상 재직하고 퇴직하여 연금지급개시연령에 도달한 때부터 사망시까지 매월 지급됩니다.</li>
+                        <li class="p-1">퇴직연금은 적용보수(평균보수월액 또는 평균기준소득월액) * 재직기간* 연도별 지급률을 기초로 연금액이 산정됩니다.</li>
+                        <li class="p-1">연금 산정방식은 연금법 개정에 따라 09년도 이전기간, 10년 ~15년도, 16년도 이후 기간으로 기간별 산출 금액의 합이 고객님의 총 연금액입니다.</li>
+                    </ul>
+                    <table class="table tabls-sm table-hover table-striped">
+                        <thead>
+                            <tr class="table-primary">
+                                <th>재직기간</th>
+                                <th>적용보수</th>
+                                <th>지급율</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>09년 이전</td>
+                                <td>07~09년도 평균 보수 월액</td>
+                                <td>
+                                    20년도 까지 2.5%<br />
+                                    20년 초과 기간 2%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>10~15년도</td>
+                                <td>평균기준 소득월액(2010년~퇴직시까지)</td>
+                                <td>1년당 1.9%</td>
+                            </tr>
+                            <tr>
+                                <td>16년 이후</td>
+                                <td>
+                                    1)평균소득기준월액(0.***%)<br />
+                                    2)소득재분배반영평균기준소득월액(1%)
+                                </td>
+                                <td>1년당 16년 1.878%~35년 1.7%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>
+                        <small
+                            ><strong><i class="bi bi-megaphone text-success"></i> 보수월액, 기준소득월액은 퇴직시까지 현재가치화 적용</strong></small
+                        >
+                    </p>
+                    <p>
+                        <small
+                            ><strong
+                                ><i class="bi bi-megaphone text-success"></i> (소득재분배 비율) 개인의평균기준소득월액을 공무원 전체(3년간)평균기준소득월액과 비교값으로 적용구간에 따른 비율입니다. 2016.1.이후 재직기간에 지급률 중 1%에 적용합니다. 단, 30년 초과 기간은 적용제외됩니다.</strong
+                            ></small
+                        >
+                    </p>
+                </div>
+                <button type="button" class="btn btn-outline-danger">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+                        <path
+                            d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"
+                        ></path>
+                    </svg>
+                    더 자세한 내용보기
+                </button>
+            </div>
+        </div>
+
+        <!-- offcanvas-->
         <script src="assets/js/bootstrap.bundle.min.js"></script>
         <script src="assets/js/moment-with-locales.min.js"></script>
-        <script src="assets/js/info1.json"></script>
-        <script>
-            //[...Array(10)].forEach((e, i) => loopNestedObj(divs));
-            const modal = new bootstrap.Modal(document.querySelector('#modal'), {});
-
-            document.onreadystatechange = () => modal.show();
-
-            let current = 0;
-
-            // 사용자가 선택한 값들
-            const selected = [];
-
-            // 질문 객체
-            class Question {
-                message;
-                options;
-                short_title;
-                constructor(short_title, message, options) {
-                    this.short_title = short_title;
-                    this.message = message;
-                    this.options = options;
-                }
-            }
-
-            //질문들
-            const questions = [
-                new Question('가) 퇴직사유', '가) 고객님의 퇴직사유를 알려주세요', [{ text: '명예퇴직' }, { text: '정년퇴직' }]),
-                new Question('나) 재직기간', '나) 고객님의 재직기간은 몇년 이신가요?(합산, 사병 기간등 가산기간 포함)', [{ text: '10년이상' }]),
-                new Question('다) 급여청구 여부', '다) 급여를 청구 하실 건가요?', [{ text: '네' }, { text: '아니오' }]),
-                new Question('라) 퇴직급여 종류', '라) 퇴직 급여 종류를 선택해 주세요?', [{ text: '미정' }, { text: '퇴직연금' }, { text: '퇴직연금일시금' }, { text: '퇴직연금 공제일시금' }]),
-                new Question('마) 퇴직수당 청구여부', '마) 퇴직수당을 청구 하실 건가요?', [{ text: '청구' }, { text: '미청구' }]),
-            ];
-
-            // 채팅 시작
-            const chatStart = () => {
-                document.getElementById('messages').innerHTML = '';
-
-                current = 0;
-
-                const _div = document.createElement('div');
-                //_div.classList.add(classname);
-                _div.classList.add('pb-4', 'text-center');
-                document.getElementById('messages').appendChild(_div);
-                const _span = document.createElement('span');
-
-                _span.textContent = moment().locale('ko').format('YYYY MMMM Do a h:mm');
-                _div.appendChild(_span);
-                _div.appendChild(document.createElement('hr'));
-
-                chat({ message: '공적연금 종합안내를 위해<br>고객님의 현재 상황을 알려주세요' });
-
-                chat(questions[current]);
-            };
-
-            // 메세지 창 생성
-            const messagediv = (question) => {
-                const { message, options } = question;
-
-                const third = document.createElement('div');
-                const thirdClasses = ['flex-shrink-1', 'bg-light', 'rounded', 'py-2', 'px-3'];
-                third.classList.add(...thirdClasses);
-
-                const msgDiv = document.createElement('div');
-                msgDiv.classList.add('font-weight-bold', 'mb-1');
-                msgDiv.innerHTML = message.replaceAll('\n', '<br>');
-
-                third.appendChild(msgDiv);
-
-                if (options) {
-                    options.forEach((o, index) => {
-                        const option = document.createElement('div');
-                        option.classList.add('rounded', 'bg-secondary', 'bg-opacity-10', 'p-3', 'mt-1', 'pointer');
-                        option.name = 'option' + current;
-
-                        const optionTxt = `${index + 1}. ${o.text}`;
-                        option.onclick = (e) => {
-                            selected[current] = o.text;
-                            answer(optionTxt);
-                            e.target.classList.add('bg-opacity-25');
-
-                            // 대답한 질문에 또 대답할수 없도록 click 이벤트 회수
-                            const sibling = e.target.parentElement.children;
-
-                            console.log(sibling);
-
-                            for (let el of sibling) {
-                                el.onclick = undefined;
-                                el.classList.remove('pointer');
-                            }
-                            nextQuestion();
-                        };
-                        option.textContent = optionTxt;
-                        third.appendChild(option);
-                    });
-                }
-
-                return third;
-            };
-
-            // 아바타 보여줌
-            const avatar = () => {
-                const second = document.createElement('div');
-                second.classList.add('mx-2');
-
-                const avatar = document.createElement('img');
-                avatar.src = 'assets/img/users/geps.gif';
-                avatar.classList.add('rounded-circle', 'me-1');
-                avatar.width = 40;
-                avatar.height = 40;
-                avatar.alt = '믿음이';
-
-                second.appendChild(avatar);
-                return second;
-            };
-
-            // 채팅시간 보여줌
-            const timediv = (classname) => {
-                const fourth = document.createElement('div');
-                fourth.classList.add('ms-2');
-
-                const timeDiv = document.createElement('div');
-                timeDiv.classList.add('text-muted', 'small', 'text-nowrap', 'mt-2');
-                timeDiv.textContent = moment().locale('ko').format('a h:mm');
-                timeDiv.classList.add(classname);
-
-                fourth.appendChild(timeDiv);
-                return fourth;
-            };
-
-            // 채팅창 생성
-            const chat = (question) => {
-                const first = document.createElement('div');
-                first.classList.add('other', 'pb-4');
-                document.getElementById('messages').appendChild(first);
-
-                // 아바타
-                first.appendChild(avatar());
-
-                // 메세지
-                const messageDiv = messagediv(question);
-                messageDiv.classList.add('message-friend');
-                first.appendChild(messageDiv);
-
-                //시간
-                first.appendChild(timediv('ms-2'));
-
-                first.focus();
-            };
-
-            // 질문 했을때 대답
-            const answer = (message) => {
-                const first = document.createElement('div');
-                first.classList.add('own', 'pb-4');
-                document.getElementById('messages').appendChild(first);
-
-                // 메세지
-                const messageDiv = messagediv({ message });
-                messageDiv.classList.add('message');
-                first.appendChild(messageDiv);
-
-                //시간
-                first.appendChild(timediv('me-2'));
-            };
-
-            // 결과 보여주는 채팅
-            const infoMessage = (info) => {
-                const first = document.createElement('div');
-                first.classList.add('other', 'pb-4');
-                document.getElementById('messages').appendChild(first);
-
-                // 1차 안내
-
-                const messageDiv = document.createElement('div');
-                const thirdClasses = ['flex-shrink-1', 'bg-light', 'rounded', 'py-2', 'px-3'];
-                messageDiv.classList.add(...thirdClasses);
-
-                const card = document.createElement('div');
-                card.classList.add('card', 'bg-light', 'border-0', 'mb-2');
-                card.style.minHeight = '10vh';
-
-                const cardHeader = document.createElement('div');
-                cardHeader.classList.add('card-header', 'bg-info', 'fs-5', 'mt-3');
-                cardHeader.textContent = '🎁 고객님의 예상되는 미래 상황은 다음과 같습니다.';
-
-                card.appendChild(cardHeader);
-
-                const divRow = document.createElement('div');
-                divRow.classList.add('row');
-
-                const divCol4 = document.createElement('div');
-                divCol4.classList.add('col-4', 'align-bottom');
-
-                //마스코트
-                const mascot = document.createElement('img');
-                mascot.src = 'assets/img/geps_mascot.png';
-                mascot.alt = '믿음이와 동행이';
-                mascot.classList.add('card-img');
-
-                divCol4.appendChild(mascot);
-                divRow.appendChild(divCol4);
-
-                const cardBody = document.createElement('div');
-                cardBody.classList.add('card-body');
-
-                const cardText = document.createElement('p');
-                cardText.classList.add('card-text', 'font-weight-bold', 'mb-1', 'align-middle');
-                cardText.innerHTML = info.message;
-
-                cardBody.appendChild(cardText);
-
-                const divCol8 = document.createElement('div');
-                divCol8.classList.add('col-8');
-                divCol8.appendChild(cardBody);
-
-                divRow.appendChild(divCol8);
-                card.appendChild(divRow);
-                messageDiv.appendChild(card);
-
-                const p2 = document.createElement('h5');
-                p2.textContent = '💰 소득활동여부';
-                messageDiv.appendChild(p2);
-
-                const card2 = infoMessage2(info);
-
-                messageDiv.appendChild(card2);
-
-                messageDiv.classList.add('message-friend');
-                first.appendChild(messageDiv);
-
-                infoMessage2(info);
-            };
-
-            // 결과 2창
-            const infoMessage2 = (info) => {
-                const card = document.createElement('div');
-                card.classList.add('card', 'bg-light');
-                card.style.minHeight = '10vh';
-
-                const cardHeader = document.createElement('div');
-                cardHeader.classList.add('card-header');
-
-                const ul = document.createElement('ul');
-                ul.classList.add('nav', 'nav-tabs', 'card-header-tabs');
-                ul.role = 'tablist';
-
-                const navTitles = ['공무원', '민간', '해당없음'];
-
-                navTitles.forEach((navTitle, i) => {
-                    const _li = document.createElement('li');
-                    _li.classList.add('nav-item');
-                    _li.role = 'presentation';
-                    const a = document.createElement('a');
-                    a.classList.add('nav-link');
-                    if (i === 0) a.classList.add('active');
-                    a.href = '#';
-                    a.role = 'tab';
-                    a.type = 'button';
-                    a.dataset['bsToggle'] = 'tab';
-                    a.dataset['bsTarget'] = `#info2_${i + 1}`;
-
-                    a.textContent = navTitle;
-                    _li.appendChild(a);
-                    ul.appendChild(_li);
-                });
-
-                cardHeader.appendChild(ul);
-                card.appendChild(cardHeader);
-
-                const cardBody = document.createElement('div');
-                cardBody.classList.add('card-body');
-
-                const tabContent = document.createElement('div');
-                tabContent.classList.add('tab-content');
-                tabContent.id = 'nav-tabContent';
-
-                const lis = [info.info2_1, info.info2_2, info.info2_3];
-
-                lis.forEach((_li, i) => {
-                    const _div = document.createElement('div');
-                    _div.classList.add('tab-pane', 'fade');
-                    if (i === 0) _div.classList.add('show', 'active');
-                    _div.id = 'info2_' + (i + 1);
-                    _div.rold = 'tabpanel';
-                    _div.innerHTML = _li ? _li.replaceAll('\n', '<br>') : '-';
-                    tabContent.appendChild(_div);
-                });
-
-                cardBody.appendChild(tabContent);
-
-                // 버튼
-                const button = document.createElement('a');
-                button.href = '#';
-                button.classList.add('btn', 'btn-md', 'btn-primary', 'mt-2', 'w-25');
-                button.textContent = '처음부터';
-                button.onclick = chatStart;
-
-                cardBody.appendChild(button);
-
-                card.appendChild(cardBody);
-
-                return card;
-            };
-
-            // 질문이 끝나고 다음 질문
-            const nextQuestion = () => {
-                current++;
-                if (current !== 5) {
-                    chat(questions[current]);
-                }
-
-                if (current === 5) {
-                    let mySelect = '';
-                    selected.forEach((e, i) => (mySelect += `<b>${questions[i].short_title}</b><br>&nbsp;&nbsp;👉 ${e}<br>`));
-
-                    const info1_selected = info1.find((e) => e.selected.join('') === selected.join(''));
-
-                    chat({ message: mySelect });
-                    infoMessage(info1_selected);
-                }
-
-                const container = document.querySelector('main .container');
-                container.scrollTo({ top: container.scrollHeight, behavior: 'smooth' });
-            };
-            chatStart();
-        </script>
+        <script src="assets/js/script.js"></script>
+        <script src="assets/info/info1.js"></script>
     </body>
 </html>
