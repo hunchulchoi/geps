@@ -1,7 +1,24 @@
-//[...Array(10)].forEach((e, i) => loopNestedObj(divs));
+// 시작시 모달 보여줌
 const modal = new bootstrap.Modal(document.querySelector('#modal'), {});
 
 document.onreadystatechange = () => modal.show();
+
+// offcanvas 관련
+const offcanvas = document.querySelector('#offcanvasInfo');
+
+offcanvas.addEventListener('show.bs.offcanvas', (e) => {
+    console.log(e, e.relatedTarget, e.relatedTarget.dataset.infoId);
+    const infoId = e.relatedTarget.dataset.infoId;
+
+    //제목
+    document.querySelector('#offcanvasLabel').textContent = `${infoId}. ${items[infoId]}`;
+
+    //본문
+    document.querySelector('#offcanvasContent').innerHTML = contents[infoId];
+
+    // 유투부
+    document.querySelector('#btnYoutube').addEventListener('click', (e) => window.open(youtube[infoId], 'youtubePop'));
+});
 
 let current = 0;
 
@@ -203,7 +220,7 @@ const infoMessage = (info) => {
 
     console.log(info, info.item1);
 
-    const html = info.item1.map((i) => `<a data-bs-toggle="offcanvas" data-bs-target="#offcanvasInfo" aria-controls="offcanvasInfo">${i}. ${items[i]}</a>`).join('<br>');
+    const html = info.item1.map((i) => `<a data-bs-toggle="offcanvas" data-bs-target="#offcanvasInfo" aria-controls="offcanvasInfo" data-info-id="${i}">${i}. ${items[i]}</a>`).join('<br>');
 
     cardText.innerHTML = html;
 
@@ -290,13 +307,18 @@ const infoMessage2 = (info) => {
     cardBody.appendChild(tabContent);
 
     // 버튼
+    const buttonDiv = document.createElement('div');
+    buttonDiv.classList.add('text-end');
+
     const button = document.createElement('a');
     button.href = '#';
-    button.classList.add('btn', 'btn-md', 'btn-primary', 'mt-2', 'text-end');
+    button.classList.add('btn', 'btn-md', 'btn-warning', 'mt-2', 'text-end');
     button.textContent = '처음부터';
     button.onclick = chatStart;
 
-    cardBody.appendChild(button);
+    buttonDiv.appendChild(button);
+
+    cardBody.appendChild(buttonDiv);
 
     card.appendChild(cardBody);
 

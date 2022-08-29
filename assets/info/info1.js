@@ -87,15 +87,15 @@ const items = {
     '2-3-1': '건강보험료 연금소득 과세',
 };
 
-const contents1 = {
-    '1-1': `<ul class="list-group list-group-flush">
-  <li class="list-group-item">퇴직연금은 공무원으로 10년 이상 재직하고 퇴직하여 연금지급개시연령에 도달한 때부터 사망시까지 매월 지급됩니다.</li>
-  <li class="list-group-item">퇴직연금은 적용보수(평균보수월액 또는 평균기준소득월액) * 재직기간* 연도별 지급률을 기초로 연금액이 산정됩니다.</li>
-  <li class="list-group-item">연금 산정방식은 연금법 개정에 따라 09년도 이전기간, 10년 ~15년도, 16년도 이후 기간으로 기간별 산출 금액의 합이 고객님의 총 연금액입니다.</li>
+const contents = {
+    '1-1': `<ul class="py-1">
+  <li class="pb-2">퇴직연금은 공무원으로 10년 이상 재직하고 퇴직하여 연금지급개시연령에 도달한 때부터 사망시까지 매월 지급됩니다.</li>
+  <li class="pb-2">퇴직연금은 적용보수(평균보수월액 또는 평균기준소득월액) * 재직기간* 연도별 지급률을 기초로 연금액이 산정됩니다.</li>
+  <li class="pb-2">연금 산정방식은 연금법 개정에 따라 09년도 이전기간, 10년 ~15년도, 16년도 이후 기간으로 기간별 산출 금액의 합이 고객님의 총 연금액입니다.</li>
 </ul>
 <table class="table tabls-sm table-hover table-striped">
   <thead>
-      <tr>
+      <tr class="table-info">
           <th>재직기간</th>
           <th>적용보수</th>
           <th>지급율</th>
@@ -125,7 +125,76 @@ const contents1 = {
       </tr>
   </tbody>
 </table>
-<p><small>보수월액, 기준소득월액은 퇴직시까지 현재가치화 적용</small></p>
-<p><small>(소득재분배 비율) 개인의평균기준소득월액을 공무원 전체(3년간)평균기준소득월액과 비교값으로 적용구간에 따른 비율입니다. 2016.1.이후 재직기간에 지급률 중 1%에 적용합니다. 단, 30년 초과 기간은 적용제외됩니다.</small></p>
+<p><small><strong><i class="bi bi-megaphone-fill text-success"></i> 보수월액, 기준소득월액은 퇴직시까지 현재가치화 적용</strong></small></p>
+<p><small><strong><i class="bi bi-megaphone-fill text-success"></i> (소득재분배 비율) 개인의평균기준소득월액을 공무원 전체(3년간)평균기준소득월액과 비교값으로 적용구간에 따른 비율입니다. 2016.1.이후 재직기간에 지급률 중 1%에 적용합니다. 단, 30년 초과 기간은 적용제외됩니다.</strong></small></p>
 `,
+    '1-2': `<ul>
+  <li class="pb-2">
+      연금개시연령은 95년도 이전임용자, 96년도 이후 임용자 개시연령으로 나눌 수 있습니다.
+      <p>
+          <small
+              ><strong><i class="bi bi-megaphone-fill text-success"></i> 96년 이후 임용자라 하더라도 공무원, 사학, 군인연금법에 적용받았던 95년도 이전 기간을 합산하였을 경우 95년 이전 임용자 기준을 적용합니다.</strong></small
+          >
+      </p>
+  </li>
+  <li class="pb-2">
+      95년도 이전 임용자는
+      <ul>
+          <li class="pb-2">2000.12.31. 현재 재직기간이 20년 이상이면 퇴직 즉시 개시</li>
+          <li class="pb-2">2000.12.31. 현재 재직기간이 20년 미만이면, 미달된 기간을 그때 당시부터 2배 이상 재직하고 퇴직한 때 즉시 개시</li>
+          <li class="pb-2">2021년도 이후 퇴직하시는 경우 👉 60세 개시됩니다.</li>
+      </ul>
+  </li>
+  <li class="pb-2">96년도 이전 임용자는 퇴직연도별 개시연령을 참고해주시기 바랍니다.</li>
+</ul>
+<table class="table tabls-sm table-hover table-striped">
+  <thead>
+      <tr class="table-info">
+          <th>연도</th>
+          <th>개시연령</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>\`22~\`23년</td>
+          <td>61세</td>
+      </tr>
+      <tr>
+          <td>\`24~\`26년</td>
+          <td>62세</td>
+      </tr>
+      <tr>
+          <td>\`27~\`29년</td>
+          <td>63세</td>
+      </tr>
+      <tr>
+          <td>\`30~\`32년</td>
+          <td>64세</td>
+      </tr>
+      <tr>
+          <td>\`33년~</td>
+          <td>65세</td>
+      </tr>
+  </tbody>
+</table>`,
+    '1-3': ` 연금수급 중 계좌변경을 매월 20일 까지 공단으로 전화, 인터넷 우편을 이용하여 계좌변경을 신청하시면 신청 월부터 변경된 계좌로 입금이 됩니다.
+  <ul>
+      <li class="pb-2">
+          <i class="bi bi-inboxes-fill text-success"></i> <strong>서류제출:</strong> 연금수급자 성명, 주민번호, 수급계좌 변경신고서, 신분증사본 제출(공단지부 : 우편, 팩스)
+          <p>
+              <small
+                  ><strong><i class="bi bi-megaphone-fill text-warning"></i> 관련서식: 공단 홈페이지-민원상담-각종서식-연금수급자용</strong></small
+              >
+          </p>
+      </li>
+      <li class="pb-2">
+        <i class="bi bi-telephone-outbound-fill text-success"></i> <strong>전화녹취:</strong> 공단으로 전화하여 신분확인 후 변경신청(1588-4321)
+      </li>
+      <li class="pb-2"><i class="bi bi-globe2 text-success"></i> <strong>인터넷 신청:</strong> 공단 홈페이지-연금수급자화면-연락처, 계좌번호변경(공인인증서 로그인 필수)</li>
+  </ul>`,
+};
+
+const youtube = {
+    '1-2': 'https://youtu.be/zmMJzfCiz3s',
+    '1-3': 'https://youtu.be/ce7-uDYPYqE',
 };
