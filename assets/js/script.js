@@ -76,7 +76,7 @@ const messagediv = (question) => {
     third.classList.add(...thirdClasses);
 
     const msgDiv = document.createElement('div');
-    msgDiv.classList.add('font-weight-bold', 'mb-1');
+    msgDiv.classList.add('mb-1', 'lead');
     msgDiv.innerHTML = message.replaceAll('\n', '<br>');
 
     third.appendChild(msgDiv);
@@ -216,7 +216,7 @@ const infoMessage = (info) => {
     cardBody.classList.add('card-body');
 
     const cardText = document.createElement('p');
-    cardText.classList.add('card-text', 'font-weight-bold', 'mb-1', 'align-middle');
+    cardText.classList.add('card-text', 'font-weight-bold', 'mb-1', 'align-middle', 'lead', 'py-3');
 
     console.log(info, info.item1);
 
@@ -295,7 +295,7 @@ const infoMessage2 = (info) => {
 
     lis.forEach((_li, i) => {
         const _div = document.createElement('div');
-        _div.classList.add('tab-pane', 'fade');
+        _div.classList.add('tab-pane', 'fade', 'lead', 'py-2');
         if (i === 0) _div.classList.add('show', 'active');
         _div.id = 'info2_' + (i + 1);
         _div.role = 'tabpanel';
