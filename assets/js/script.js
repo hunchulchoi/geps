@@ -216,11 +216,9 @@ const infoMessage = (info) => {
     cardBody.classList.add('card-body');
 
     const cardText = document.createElement('p');
-    cardText.classList.add('card-text', 'font-weight-bold', 'mb-1', 'align-middle', 'lead', 'py-3');
+    cardText.classList.add('card-text', 'font-weight-bold', 'mb-1', 'align-middle', 'lead');
 
-    console.log(info, info.item1);
-
-    const html = info.item1.map((i) => `<a data-bs-toggle="offcanvas" data-bs-target="#offcanvasInfo" aria-controls="offcanvasInfo" data-info-id="${i}">${i}. ${items[i]}</a>`).join('<br>');
+    const html = info.item1.map((i) => `<a data-bs-toggle="offcanvas" data-bs-target="#offcanvasInfo" aria-controls="offcanvasInfo" data-info-id="${i}" class='link'>${i}. ${items[i]}</a>`).join('<br>');
 
     cardText.innerHTML = html;
 
@@ -295,12 +293,12 @@ const infoMessage2 = (info) => {
 
     lis.forEach((_li, i) => {
         const _div = document.createElement('div');
-        _div.classList.add('tab-pane', 'fade', 'lead', 'py-2');
+        _div.classList.add('tab-pane', 'fade', 'lead');
         if (i === 0) _div.classList.add('show', 'active');
         _div.id = 'info2_' + (i + 1);
         _div.role = 'tabpanel';
 
-        _div.innerHTML = _li ? _li.map((i) => `<a data-bs-toggle="offcanvas" data-bs-target="#offcanvasInfo" aria-controls="offcanvasInfo">${i}. ${items[i]}</a>`).join('<br>') : '-';
+        _div.innerHTML = _li ? _li.map((i) => `<a data-bs-toggle="offcanvas" data-bs-target="#offcanvasInfo" class='link' aria-controls="offcanvasInfo">${i}. ${items[i]}</a>`).join('<br>') : '-';
         tabContent.appendChild(_div);
     });
 
