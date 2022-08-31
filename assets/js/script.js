@@ -298,7 +298,7 @@ const infoMessage2 = (info) => {
         _div.id = 'info2_' + (i + 1);
         _div.role = 'tabpanel';
 
-        _div.innerHTML = _li ? _li.map((i) => `<a data-bs-toggle="offcanvas" data-bs-target="#offcanvasInfo" class='link' aria-controls="offcanvasInfo">${i}. ${items[i]}</a>`).join('<br>') : '-';
+        _div.innerHTML = _li ? _li.map((i) => `<a data-bs-toggle="offcanvas" data-info-id="${i}" data-bs-target="#offcanvasInfo" class='link' aria-controls="offcanvasInfo">${i}. ${items[i]}</a>`).join('<br>') : '-';
         tabContent.appendChild(_div);
     });
 
