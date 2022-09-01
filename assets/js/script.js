@@ -21,11 +21,12 @@ offcanvas.addEventListener('show.bs.offcanvas', (e) => {
     if (_youtube) {
         const _ydiv = document.createElement('div');
         //_ydiv.id = 'youtube';
-        _ydiv.classList.add('embed-responsive', 'p-2', 'w-100');
+        _ydiv.classList.add('ratio', 'ratio-16x9', 'p-2', 'w-100');
         const _yif = document.createElement('iframe');
-        _yif.classList.add('embed-responsive-item');
+        // _yif.classList.add('embed-responsive-item');
         //_yif.setAttribute('crossorigin', 'anonymous');
         _yif.src = _youtube;
+        _yif.allowFullscreen = true;
         _ydiv.appendChild(_yif);
 
         document.querySelector('.offcanvas-body').appendChild(_ydiv);
@@ -34,7 +35,7 @@ offcanvas.addEventListener('show.bs.offcanvas', (e) => {
 });
 
 offcanvas.addEventListener('hidden.bs.offcanvas', (e) => {
-    document.querySelector('.embed-responsive').remove();
+    document.querySelector('.ratio-16x9').remove();
 });
 
 let current = 0;
