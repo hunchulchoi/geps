@@ -557,7 +557,7 @@ const contents = {
 };
 
 const youtube = {
-    '1-2': 'https://www.youtube.com/watch?v=zmMJzfCiz3s',
+    '1-2': 'https://www.youtube.com/embed/zmMJzfCiz3s',
     '1-3': 'https://www.youtube.com/watch?v=ce7-uDYPYqE',
     '1-4': 'https://www.youtube.com/watch?v=uctr3yFXMf8',
     '1-5': 'https://www.youtube.com/watch?v=mU_zgMld-eE',
