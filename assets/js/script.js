@@ -21,7 +21,7 @@ offcanvas.addEventListener('show.bs.offcanvas', (e) => {
     if (_youtube) {
         const _ydiv = document.createElement('div');
         //_ydiv.id = 'youtube';
-        _ydiv.classList.add('embed-responsive');
+        _ydiv.classList.add('embed-responsive', 'p-2', 'w-100');
         const _yif = document.createElement('iframe');
         _yif.classList.add('embed-responsive-item');
         //_yif.setAttribute('crossorigin', 'anonymous');
@@ -31,6 +31,10 @@ offcanvas.addEventListener('show.bs.offcanvas', (e) => {
         document.querySelector('.offcanvas-body').appendChild(_ydiv);
     }
     //document.querySelector('#btnYoutube').addEventListener('click', (e) => window.open(youtube[infoId], 'youtubePop'));
+});
+
+offcanvas.addEventListener('hidden.bs.offcanvas', (e) => {
+    document.querySelector('.embed-responsive').remove();
 });
 
 let current = 0;
