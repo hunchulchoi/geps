@@ -289,14 +289,14 @@ const contents = {
           <i class="bi bi-inboxes-fill text-success"></i> <strong>서류제출:</strong> 연금수급자 성명, 주민번호, 수급계좌 변경신고서, 신분증사본 제출(공단지부 : 우편, 팩스)
           <p>
               <small
-                  ><strong><i class="bi bi-megaphone-fill text-warning"></i> 관련서식: <a href='https://www.geps.or.kr' target='_blank'><i class="bi bi-box-arrow-up-right"></i> 공단 홈페이지</a>-민원상담-각종서식-연금수급자용</strong></small
+                  ><strong><i class="bi bi-megaphone-fill text-warning"></i> 관련서식: <a href='https://www.geps.or.kr' target='_blank'> 공단 홈페이지 <i class="bi bi-box-arrow-up-right"></i></a>-민원상담-각종서식-연금수급자용</strong></small
               >
           </p>
       </li>
       <li class="pb-2">
         <i class="bi bi-telephone-outbound-fill text-success"></i> <strong>전화녹취:</strong> 공단으로 전화하여 신분확인 후 변경신청<br><a href='tel:1588-4321'>전화걸기 (1588-4321)</a>
       </li>
-      <li class="pb-2"><i class="bi bi-globe2 text-success"></i> <strong>인터넷 신청:</strong> <a href='https://www.geps.or.kr' target='_blank'><i class="bi bi-box-arrow-up-right"></i> 공단 홈페이지</a>-연금수급자화면-연락처, 계좌번호변경(공인인증서 로그인 필수)</li>
+      <li class="pb-2"><i class="bi bi-globe2 text-success"></i> <strong>인터넷 신청:</strong> <a href='https://www.geps.or.kr' target='_blank'> 공단 홈페이지 <i class="bi bi-box-arrow-up-right"></i></a>-연금수급자화면-연락처, 계좌번호변경(공인인증서 로그인 필수)</li>
   </ul>`,
     '1-4': ` <ul class="py-2 lead">
     <li class="pb-2">‘공무원연금평생안심통장’을 이용하시면 연금월액 중 185만원까지 입금되어 연금압류를 방지할 수 있습니다. 다만, 공무원연금 외의 자금은 입금불가하며, 185만원 초과하는 금액은 일반계좌로 입금됩니다.</li>
@@ -333,7 +333,7 @@ const contents = {
     <li class="pb-2">1년 이상 재직자는 퇴직 후 퇴직급여와 별도로 퇴직수당을 받을 수 있습니다.</li>
     <li class="pb-2">단, 퇴직급여(연금, 일시금)의 경우 합산, 연계신청 등의 사유로 미수령할 수 있기 때문에 아래의 경로를 통해 퇴직수당만 청구하실 수있습니다.
         <ol>
-            <li><a href='https://www.geps.or.kr' target='_blank'><i class="bi bi-box-arrow-up-right"></i> 공단 홈페이지(www.geps.or.kr)</a> 접속</li>
+            <li><a href='https://www.geps.or.kr' target='_blank'> 공단 홈페이지(www.geps.or.kr) <i class="bi bi-box-arrow-up-right"></i></a> 접속</li>
             <li>공인인증서 로그인(사전 인증서 등록 필수!) </li>
             <li>연금이오 고객지원시스템-퇴직급여안내-퇴직급여본인직접청구</li>
             <li>청구화면에서 퇴직수당만 청구 체크!</li>
@@ -343,7 +343,7 @@ const contents = {
     '1-8': `<ul class="py-2 lead">
     <li class="pb-2">급여(수당) 청구방법은 아래의 경로를 통해 청구하실 수 잇습니다.
         <ol>
-            <li><a href='https://www.geps.or.kr' target='_blank'><i class="bi bi-box-arrow-up-right"></i> 공단 홈페이지(www.geps.or.kr)</a> 접속</li>
+            <li><a href='https://www.geps.or.kr' target='_blank'> 공단 홈페이지(www.geps.or.kr) <i class="bi bi-box-arrow-up-right"></i></a> 접속</li>
             <li>공인인증서 로그인(사전 인증서 등록 필수!) </li>
             <li>연금이오 고객지원시스템-퇴직급여안내-퇴직급여본인직접청구</li>
         </ol>
@@ -357,7 +357,7 @@ const contents = {
             <li>퇴직년도에 승진·전직·보직변경 등으로 봉급월액이 증가한 경우에는 봉급월액 증가분을 승진월수에 비례하여 기준소득 월액에 가산</li>
         </ul>
         <p>
-    <small><strong><i class="bi bi-megaphone-fill text-success"></i> 자세한 산정방식은 아래의 링크를 참고해주시기 바랍니다.</strong></small>
+    <small><strong><i class="bi bi-megaphone-fill text-success"></i> 자세한 산정방식은 아래의 비디오를 참고해주시기 바랍니다.</strong></small>
 </p>
     </li>
 </ul>
@@ -377,7 +377,7 @@ const contents = {
 `,
     '1-11': `<ul class="py-2 lead">
     <li class="pb-2">
-        연금액은 매년 1월 소비자물가변동률을 반영하여 조정됩니다. <a href='https://www.law.go.kr/법령/공무원연금법/(20210623,17752,20201222)/제53조' target='_blank'><i class="bi bi-box-arrow-up-right"></i> (공무원연금법 제35조)</a>
+        연금액은 매년 1월 소비자물가변동률을 반영하여 조정됩니다. <a href='https://www.law.go.kr/법령/공무원연금법/(20210623,17752,20201222)/제53조' target='_blank'> (공무원연금법 제35조) <i class="bi bi-box-arrow-up-right"></i></a>
         <br>연금액 조정방법 = 전년도 연금액 × (1+전년도 전국 소비자 물가변동률)
     </li>
 </ul>
@@ -395,7 +395,7 @@ const contents = {
     </li>
 </ul>
 <p>
-    <small><strong><i class="bi bi-megaphone-fill text-success"></i> 기타 공무원연금급여에 관한 제도안내는 링크를 통해 자세하게 확인하시기 바랍니다.</strong></small>
+    <small><strong><i class="bi bi-megaphone-fill text-success"></i> 기타 공무원연금급여에 관한 제도안내는 비디오를 통해 자세하게 확인하시기 바랍니다.</strong></small>
 </p>`,
     '2-1-1': `<ul class="py-2 lead">
     <li class="pb-2">
@@ -518,10 +518,10 @@ const contents = {
 </ul>`,
     '2-2-4': `<ul class="py-2 lead">
     <li class="pb-2">
-        기초연금법 제3조제3항제1호에 따라 공무원연금수급자(연금공제일시금, 연계퇴직연금 포함), 퇴직연금일시금 수령한 자와 그 배우자가 수령할 경우 기초연금을 수령할 수 없습니다.
+        <a href='https://glaw.scourt.go.kr/wsjo/lawod/sjo192.do?contId=2222602&jomunNo=3&jomunGajiNo=0' target='_blank'>기초연금법 제3조제3항제1호 <i class="bi bi-box-arrow-up-right"></i></a>에 따라 공무원연금수급자(연금공제일시금, 연계퇴직연금 포함), 퇴직연금일시금 수령한 자와 그 배우자가 수령할 경우 기초연금을 수령할 수 없습니다.
     </li>
     <li class="pb-2">
-        <a href='http://basicpension.mohw.go.kr/Nfront_main/index.jsp' target='_blank'><i class="bi bi-box-arrow-up-right"></i> 보건복지부 기초연금 홈페이지 가기</a>
+        <a href='http://basicpension.mohw.go.kr/Nfront_main/index.jsp' target='_blank'> 보건복지부 기초연금 홈페이지 가기 <i class="bi bi-box-arrow-up-right"></i> </a>
     </li>
 </ul>`,
     '2-2-5': `<ul class="py-2 lead">
