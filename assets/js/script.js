@@ -57,11 +57,10 @@ class Question {
 
 //질문들
 const questions = [
-    new Question('가) 퇴직사유', '가) 고객님의 퇴직사유를 알려주세요', [{ text: '명예퇴직' }, { text: '정년퇴직' }]),
-    new Question('나) 재직기간', '나) 고객님의 재직기간은 몇년 이신가요?(합산, 사병 기간등 가산기간 포함)', [{ text: '10년이상' }]),
-    new Question('다) 급여청구 여부', '다) 급여를 청구 하실 건가요?', [{ text: '네' }, { text: '아니오' }]),
-    new Question('라) 퇴직급여 종류', '라) 퇴직 급여 종류를 선택해 주세요?', [{ text: '미정' }, { text: '퇴직연금' }, { text: '퇴직연금일시금' }, { text: '퇴직연금 공제일시금' }]),
-    new Question('마) 퇴직수당 청구여부', '마) 퇴직수당을 청구 하실 건가요?', [{ text: '청구' }, { text: '미청구' }]),
+    new Question('가) 퇴직급여(수당) 청구여부', '가) 퇴직급여(퇴직수당) 청구여부를 선택해주세요.', [{ text: '청구' }, { text: '미청구' }]),
+    new Question('나) 재직기간', '나) 고객님의 재직기간은 몇년 이신가요?(합산, 사병 기간등 가산기간 포함)', [{ text: '10년이상' }, { text: '10년미만' }]),
+    new Question('다) 퇴직사유', '다) 고객님의 퇴직사유를 알려주세요', [{ text: '정년퇴직' }, { text: '일반퇴직' }, { text: '명예퇴직' }]),
+    new Question('라) 퇴직급여 종류', '라) 퇴직 급여 종류를 선택해 주세요?', [{ text: '퇴직연금' }, { text: '퇴직연금일시금' }]),
 ];
 
 // 채팅 시작
@@ -211,7 +210,7 @@ const infoMessage = (info) => {
 
     const cardHeader = document.createElement('div');
     cardHeader.classList.add('card-header', 'bg-info', 'fs-5', 'mt-3');
-    cardHeader.textContent = '🎁 고객님의 예상되는 미래 상황은 다음과 같습니다.';
+    cardHeader.textContent = '🎁 고객님의 예상되는 미래상황별 안내사항은 다음과 같습니다.';
 
     card.appendChild(cardHeader);
 
@@ -250,18 +249,34 @@ const infoMessage = (info) => {
     card.appendChild(divRow);
     messageDiv.appendChild(card);
 
-    const p2 = document.createElement('h5');
-    p2.textContent = '💰 소득활동여부';
-    messageDiv.appendChild(p2);
+    if (info.item21 || info.item22 || info.item23) {
+        const p2 = document.createElement('h5');
+        p2.textContent = '💰 소득활동여부';
+        messageDiv.appendChild(p2);
 
-    const card2 = infoMessage2(info);
+        const card2 = infoMessage2(info);
 
-    messageDiv.appendChild(card2);
+        messageDiv.appendChild(card2);
+        infoMessage2(info);
+    }
 
     messageDiv.classList.add('message-friend');
+
     first.appendChild(messageDiv);
 
-    infoMessage2(info);
+    // 버튼
+    const buttonDiv = document.createElement('div');
+    buttonDiv.classList.add('text-end');
+
+    const button = document.createElement('a');
+    button.href = '#';
+    button.classList.add('btn', 'btn-md', 'btn-warning', 'mt-2', 'text-end');
+    button.textContent = '처음부터';
+    button.onclick = chatStart;
+
+    buttonDiv.appendChild(button);
+
+    messageDiv.appendChild(buttonDiv);
 };
 
 // 결과 2창
@@ -278,23 +293,26 @@ const infoMessage2 = (info) => {
     ul.role = 'tablist';
 
     const navTitles = ['공무원', '민간', '해당없음'];
+    const lis = [info.item21, info.item22, info.item23];
 
     navTitles.forEach((navTitle, i) => {
-        const _li = document.createElement('li');
-        _li.classList.add('nav-item');
-        _li.role = 'presentation';
-        const a = document.createElement('a');
-        a.classList.add('nav-link');
-        if (i === 0) a.classList.add('active');
-        a.href = '#';
-        a.role = 'tab';
-        a.type = 'button';
-        a.dataset['bsToggle'] = 'tab';
-        a.dataset['bsTarget'] = `#info2_${i + 1}`;
+        if (lis[i]) {
+            const _li = document.createElement('li');
+            _li.classList.add('nav-item');
+            _li.role = 'presentation';
+            const a = document.createElement('a');
+            a.classList.add('nav-link');
+            if (i === 0) a.classList.add('active');
+            a.href = '#';
+            a.role = 'tab';
+            a.type = 'button';
+            a.dataset['bsToggle'] = 'tab';
+            a.dataset['bsTarget'] = `#info2_${i + 1}`;
 
-        a.textContent = navTitle;
-        _li.appendChild(a);
-        ul.appendChild(_li);
+            a.textContent = navTitle;
+            _li.appendChild(a);
+            ul.appendChild(_li);
+        }
     });
 
     cardHeader.appendChild(ul);
@@ -307,34 +325,20 @@ const infoMessage2 = (info) => {
     tabContent.classList.add('tab-content');
     tabContent.id = 'nav-tabContent';
 
-    const lis = [info.item21, info.item22, info.item23];
-
     lis.forEach((_li, i) => {
-        const _div = document.createElement('div');
-        _div.classList.add('tab-pane', 'fade', 'lead');
-        if (i === 0) _div.classList.add('show', 'active');
-        _div.id = 'info2_' + (i + 1);
-        _div.role = 'tabpanel';
+        if (lis[i]) {
+            const _div = document.createElement('div');
+            _div.classList.add('tab-pane', 'fade', 'lead');
+            if (i === 0) _div.classList.add('show', 'active');
+            _div.id = 'info2_' + (i + 1);
+            _div.role = 'tabpanel';
 
-        _div.innerHTML = _li ? _li.map((i) => `<a data-bs-toggle="offcanvas" data-info-id="${i}" data-bs-target="#offcanvasInfo" class='link' aria-controls="offcanvasInfo">${i}. ${items[i]}</a>`).join('<br>') : '-';
-        tabContent.appendChild(_div);
+            _div.innerHTML = _li ? _li.map((i) => `<a data-bs-toggle="offcanvas" data-info-id="${i}" data-bs-target="#offcanvasInfo" class='link' aria-controls="offcanvasInfo">${i}. ${items[i]}</a>`).join('<br>') : '-';
+            tabContent.appendChild(_div);
+        }
     });
 
     cardBody.appendChild(tabContent);
-
-    // 버튼
-    const buttonDiv = document.createElement('div');
-    buttonDiv.classList.add('text-end');
-
-    const button = document.createElement('a');
-    button.href = '#';
-    button.classList.add('btn', 'btn-md', 'btn-warning', 'mt-2', 'text-end');
-    button.textContent = '처음부터';
-    button.onclick = chatStart;
-
-    buttonDiv.appendChild(button);
-
-    cardBody.appendChild(buttonDiv);
 
     card.appendChild(cardBody);
 
@@ -344,11 +348,15 @@ const infoMessage2 = (info) => {
 // 질문이 끝나고 다음 질문
 const nextQuestion = () => {
     current++;
-    if (current !== 5) {
-        chat(questions[current]);
+    if (current !== questions.length) {
+        if (current === 1 && selected[0] === '미청구') {
+            infoMessage(info1[0]);
+        } else if (current === 2 && selected[1] === '10년미만') {
+            infoMessage(info1[1]);
+        } else chat(questions[current]);
     }
 
-    if (current === 5) {
+    if (current === questions.length) {
         let mySelect = '';
         selected.forEach((e, i) => (mySelect += `<b>${questions[i].short_title}</b><br>&nbsp;&nbsp;👉 ${e}<br>`));
 
