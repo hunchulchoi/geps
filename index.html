@@ -1,85 +1,155 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="공적연금 종합안내" />
-        <meta name="author" content="공무원 연금공단" />
-        <title>공적연금 종합안내</title>
-        <meta property="og:title" content="공적연금 종합안내" />
-        <meta property="og:description" content="공무원 연금공단 공적연금 종합안내" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.geps.or.kt" />
-        <meta property="og:image" content="/assets/img/talk_logo.png" />
-        <link rel="icon" type="image/svg+xml" href="assets/img/talk.ico" />
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="assets/css/main.css" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
-    </head>
-    <body>
-        <header>
-            <div class="container d-flex align-items-center justify-content-between p-3 mb-3 custom-border-bottom">
-                <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
-                    <img class="logo" src="assets/img/logo.png" alt="공무원 연금공단" height="40" style="margin-top: 8px" />
-                    <span class="ms-2 fs-4">공적연금 종합안내 프로그램</span>
-                </a>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="공적연금 종합안내" />
+    <meta name="author" content="공무원 연금공단" />
+    <title>공적연금 종합안내</title>
+    <meta property="og:title" content="공적연금 종합안내" />
+    <meta
+      property="og:description"
+      content="공무원 연금공단 공적연금 종합안내"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.geps.or.kr" />
+    <meta
+      property="og:image"
+      content="https://hunchulchoi.github.io/geps/assets/img/users/geps.gif"
+    />
+    <link rel="icon" type="image/svg+xml" href="assets/img/talk.ico" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div
+        class="container d-flex align-items-center justify-content-between p-3 mb-3 custom-border-bottom"
+      >
+        <a
+          href="/"
+          class="d-flex align-items-center text-dark text-decoration-none"
+        >
+          <img
+            class="logo"
+            src="assets/img/logo.png"
+            alt="공무원 연금공단"
+            height="40"
+            style="margin-top: 8px"
+          />
+          <span class="ms-2 fs-4">공적연금 종합안내 프로그램</span>
+        </a>
 
-                <div>
-                    <button class="btn btn-warning" onclick="chatStart()">처음부터</button>
+        <div>
+          <button class="btn btn-warning" onclick="chatStart()">
+            처음부터
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <div class="modal fade" tabindex="-1" id="modal">
+          <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">
+                  <img
+                    class="logo"
+                    src="assets/img/logo.png"
+                    alt="공무원 연금공단"
+                    height="40"
+                  />공적연금 종합안내 프로그램
+                </h5>
+                <button
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="닫기"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-5">
+                    <img
+                      src="assets/img/geps_mascot.png"
+                      alt="믿음이와 동행이"
+                      width="100%"
+                    />
+                  </div>
+                  <div class="col-7">
+                    <p>
+                      기존의 수동적에서 보다 능동적이고 고객 상황별 대응 사례를
+                      기반으로 하여 공단의 연금전문성을 통해 고객님들께 공적연금
+                      종합안내 프로그램을 제작했습니다.
+                    </p>
+                    <p>퇴직사유와 급여종류 등 향후 경력경로 등</p>
+                    <p>
+                      여러분의 현재(단기 예정)와 미래 상황적합한 공적연금 분양에
+                      전문적인 안내 서비스를 통해 충분한 연금제도 활용과 노후
+                      설계를 지원하고자 만들었습니다.
+                    </p>
+                    <p>
+                      고객님께서 입력하신 값에 따라 공단 마스코트 믿음이가
+                      안내를 도와 드립니다.
+                    </p>
+                    <p>감사합니다.</p>
+                  </div>
                 </div>
+                <p class="fs-4 text-warning">
+                  🙅🏻‍♀️ 본 개인별 입력값 등 정보는 수집, 보관되지 않으며, 서비스
+                  종료후 자동적으로 폐기됩니다.
+                </p>
+              </div>
+              <div class="modal-footer">
+                '<button
+                  class="btn btn-md btn-primary w-25"
+                  data-bs-dismiss="modal"
+                >
+                  닫기
+                </button>
+              </div>
             </div>
-        </header>
-        <main>
-            <div class="container">
-                <div class="modal fade" tabindex="-1" id="modal">
-                    <div class="modal-dialog modal-lg modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title"><img class="logo" src="assets/img/logo.png" alt="공무원 연금공단" height="40" />공적연금 종합안내 프로그램</h5>
-                                <button class="btn-close" data-bs-dismiss="modal" aria-label="닫기"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="row">
-                                    <div class="col-5"><img src="assets/img/geps_mascot.png" alt="믿음이와 동행이" width="100%" /></div>
-                                    <div class="col-7">
-                                        <p>기존의 수동적에서 보다 능동적이고 고객 상황별 대응 사례를 기반으로 하여 공단의 연금전문성을 통해 고객님들께 공적연금 종합안내 프로그램을 제작했습니다.</p>
-                                        <p>퇴직사유와 급여종류 등 향후 경력경로 등</p>
-                                        <p>여러분의 현재(단기 예정)와 미래 상황적합한 공적연금 분양에 전문적인 안내 서비스를 통해 충분한 연금제도 활용과 노후 설계를 지원하고자 만들었습니다.</p>
-                                        <p>고객님께서 입력하신 값에 따라 공단 마스코트 믿음이가 안내를 도와 드립니다.</p>
-                                        <p>감사합니다.</p>
-                                    </div>
-                                </div>
-                                <p class="fs-4 text-warning">🙅🏻‍♀️ 본 개인별 입력값 등 정보는 수집, 보관되지 않으며, 서비스 종료후 자동적으로 폐기됩니다.</p>
-                            </div>
-                            <div class="modal-footer">'<button class="btn btn-md btn-primary w-25" data-bs-dismiss="modal">닫기</button></div>
-                        </div>
-                    </div>
-                </div>
+          </div>
+        </div>
 
-                <div class="card">
-                    <div class="card-header" style="z-index: 1030">
-                        <h5>대화하기</h5>
-                    </div>
-                    <div class="card-body" id="messages"></div>
-                </div>
-            </div>
-        </main>
-        <footer class="py-3">
-            <div class="container custom-border-top pt-3" style="color: #556677">
-                (63568)제주특별자치도 서귀포시 서호중앙로 63(서호동)<br />
-                Copyright(c) GEPS. All Right Reserved.
-            </div>
-        </footer>
+        <div class="card">
+          <div class="card-header" style="z-index: 1030">
+            <h5>대화하기</h5>
+          </div>
+          <div class="card-body" id="messages"></div>
+        </div>
+      </div>
+    </main>
+    <footer class="py-3">
+      <div class="container custom-border-top pt-3" style="color: #556677">
+        (63568)제주특별자치도 서귀포시 서호중앙로 63(서호동)<br />
+        Copyright(c) GEPS. All Right Reserved.
+      </div>
+    </footer>
 
-        <!-- offcanvas-->
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasInfo" aria-labelledby="offcanvasLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasLabel"></h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="닫기"></button>
-            </div>
-            <div class="offcanvas-body">
-                <div id="offcanvasContent"></div>
-                <!-- <button type="button" class="btn btn-outline-danger" id="btnYoutube">
+    <!-- offcanvas-->
+    <div
+      class="offcanvas offcanvas-start"
+      tabindex="-1"
+      id="offcanvasInfo"
+      aria-labelledby="offcanvasLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasLabel"></h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="닫기"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <div id="offcanvasContent"></div>
+        <!-- <button type="button" class="btn btn-outline-danger" id="btnYoutube">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
                         <path
                             d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"
@@ -87,16 +157,22 @@
                     </svg>
                     더 자세한 내용보기
                 </button> -->
-            </div>
-            <div class="text-end me-4 mb-4">
-                <button type="button" data-bs-dismiss="offcanvas" class="btn btn-primary px-5">닫기</button>
-            </div>
-        </div>
+      </div>
+      <div class="text-end me-4 mb-4">
+        <button
+          type="button"
+          data-bs-dismiss="offcanvas"
+          class="btn btn-primary px-5"
+        >
+          닫기
+        </button>
+      </div>
+    </div>
 
-        <!-- offcanvas-->
-        <script src="assets/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/js/moment-with-locales.min.js"></script>
-        <script src="assets/js/script.js"></script>
-        <script src="assets/info/info1.js"></script>
-    </body>
+    <!-- offcanvas-->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/moment-with-locales.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/info/info1.js"></script>
+  </body>
 </html>
