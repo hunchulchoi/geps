@@ -222,7 +222,7 @@ const infoMessage = (info) => {
 
     //마스코트
     const mascot = document.createElement('img');
-    mascot.src = 'assets/img/geps_mascot.png';
+    mascot.src = `assets/img/mascot/mascot${Math.floor(Math.random() * 5) + 1}.png`;
     mascot.alt = '믿음이와 동행이';
     mascot.classList.add('card-img');
 
