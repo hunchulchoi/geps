@@ -45,9 +45,6 @@ const selected = [];
 
 // 질문 객체
 class Question {
-    message;
-    options;
-    short_title;
     constructor(short_title, message, options) {
         this.short_title = short_title;
         this.message = message;
@@ -306,8 +303,8 @@ const infoMessage2 = (info) => {
             a.href = '#';
             a.role = 'tab';
             a.type = 'button';
-            a.dataset['bsToggle'] = 'tab';
-            a.dataset['bsTarget'] = `#info2_${i + 1}`;
+            a.dataset.bsToggle = 'tab';
+            a.dataset.bsTarget = `#info2_${i + 1}`;
 
             a.textContent = navTitle;
             _li.appendChild(a);
