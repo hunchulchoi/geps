@@ -60,6 +60,13 @@ const questions = [
     new Question('라) 퇴직급여 종류', '라) 퇴직 급여 종류를 선택해 주세요?', [{ text: '퇴직연금' }, { text: '퇴직연금일시금' }]),
 ];
 
+const breadCurmbs = [
+    ['퇴직급여 청구', '퇴직급여 미청구'],
+    ['재직 10년이상', '재직 10년미만'],
+    ['정년퇴직', '일반퇴직', '명예퇴직'],
+    ['퇴직연금', '퇴직연금일시금'],
+];
+
 // 채팅 시작
 const chatStart = () => {
     document.getElementById('messages').innerHTML = '';
@@ -104,7 +111,7 @@ const messagediv = (question) => {
             const optionTxt = `${index + 1}. ${o.text}`;
             option.onclick = (e) => {
                 selected[current] = o.text;
-                answer(optionTxt);
+                answer(optionTxt, breadCurmbs[current][index]);
                 e.target.classList.add('bg-opacity-25');
 
                 // 대답한 질문에 또 대답할수 없도록 click 이벤트 회수
@@ -175,7 +182,7 @@ const chat = (question) => {
 };
 
 // 질문 했을때 대답
-const answer = (message) => {
+const answer = (message, breadcrumb) => {
     const first = document.createElement('div');
     first.classList.add('own', 'pb-4');
     document.getElementById('messages').appendChild(first);
@@ -187,6 +194,14 @@ const answer = (message) => {
 
     //시간
     first.appendChild(timediv('me-2'));
+
+    const breadCrumb = document.querySelector('ol.breadcrumb');
+
+    const crumbItem = document.createElement('li');
+    crumbItem.classList.add('breadcrumb-item');
+    crumbItem.textContent = breadcrumb;
+
+    breadCrumb.appendChild(crumbItem);
 };
 
 // 결과 보여주는 채팅
