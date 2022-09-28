@@ -70,6 +70,7 @@ const breadCurmbs = [
 // 채팅 시작
 const chatStart = () => {
     document.getElementById('messages').innerHTML = '';
+    document.querySelector('ol.breadcrumb').innerHTML = '';
 
     current = 0;
 
